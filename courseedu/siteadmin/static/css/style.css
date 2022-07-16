@@ -1,0 +1,135 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Poppins", "Roboto", sans-serif;
+  background-color: #e3e3e3;
+}
+
+h2{
+	color: #000000;
+}
+
+.heading{
+    text-align: center;
+    font-size: 2em;
+	font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #000000;
+    padding: 30px 0;
+}
+
+.messages{
+	background-color: #74ff7b;
+	color: #000000;
+	padding: 15px 25px;
+	margin: 15px 30px -60px 30px;
+	border: #28db31 solid;
+	border-radius: 10px;
+}
+
+.banner{
+	height: 250px;
+	display: block;
+	line-height: 2rem;
+	background-image: url("/static/images/banner.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.bannertext{
+	height: 250px;
+	width: 70%;
+	float: left;
+	position: relative;
+	left: 0%;
+	border-top: 250px solid #e3e3e3;
+    border-right: 80px solid transparent;
+}
+.bannertext div{
+	line-height: 2.5em;
+	color: #000000;
+	margin: -180px 10% 10% 10%;
+}
+.bannertext div h2{
+	font-size: 2.5em;
+	font-weight: bold;
+	padding: 0 0;
+	text-align: left;
+}
+.bannertext div p{
+	font-size: 1.5em;
+	padding: 0 0;
+	line-height: 1.5em;
+}
+.section{
+	background: #ffffff;
+	padding: 40px 60px;
+	height: 400px;
+	color: #000000;
+}
+section h2{
+	padding-top: 0;
+	margin-bottom: 20px;
+	font-size: 2em;
+	font-weight: bold;
+}
+.coursebox{
+	border-radius: 20px;
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.1),-2px 2px 5px rgba(0,0,0,0.1),2px -2px 5px rgba(0,0,0,0.1),-2px -2px 5px rgba(0,0,0,0.1);
+	margin: 14px 8px;
+	float: left;
+	background: #ff916d;
+	color: #000000;
+	height: 270px;
+	max-width: 250px;
+	overflow: overlay;
+}
+
+.coursebox h4{
+	position: relative;
+	top: 0px;
+	font-size: 22px;
+	margin: 10px 20px;
+}
+.coursebox p{
+	top: 0px;
+	position: relative;
+	font-size: 16px;
+	margin: 10px 20px;
+}
+.category-img{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	border-top-left-radius: inherit;
+	border-top-right-radius: inherit;
+	min-width: 100%;
+	height: 125px;
+}
+
+.category-imgview{
+	border-top-left-radius: inherit;
+	border-top-right-radius: inherit;
+	width: 100%;
+	height: initial;
+}
+
+.footer{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 2.5rem;
+	background-color: rgba(0,0,0,0.85);color: white;
+	text-align: center;
+	padding-top: 0.85rem;
+	display: none;
+}
