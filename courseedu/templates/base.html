@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load static %}
+<meta charset="utf-8">
+<meta http-equiv="Content-Language" value="en-US">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}CourseEdu{% endblock %}</title>
+<link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+<link href="{% static 'css/reset.min.css' %}" type="text/css" rel="stylesheet" media="screen">
+<link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen">
+<link href="{% static 'css/header.css' %}" type="text/css" rel="stylesheet" media="screen">
+<link href="{% static 'css/login.css' %}" type="text/css" rel="stylesheet" media="screen">
+<link href="{% static 'css/form.css' %}" type="text/css" rel="stylesheet" media="screen">
+<link href="{% static 'css/table.css' %}" type="text/css" rel="stylesheet" media="screen">
+</head>
+<body>
+{% include 'header.html' %}
+{% block content %}
+{% endblock content %}
+{% include 'footer.html' %}
+</body>
+</html>

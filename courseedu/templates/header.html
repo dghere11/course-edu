@@ -1,0 +1,26 @@
+<div class="main-bar">
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="logo-header">
+            <a href="{% url 'index' %}">CourseEdu</a>
+        </div>
+        <ul>
+            <li {% if request.resolver_match.url_name == 'index' %}class="active"{% endif %}><a href="{% url 'index' %}">Home</a></li>
+            <li {% if request.resolver_match.url_name == 'about' %}class="active"{% endif %}><a href="{% url 'about' %}">About</a></li>
+            <li {% if request.resolver_match.url_name == 'contact' %}class="active"{% endif %}><a href="{% url 'contact' %}">Contact</a></li>
+            {% if user.is_authenticated %}
+            <li {% if request.resolver_match.url_name == 'siteadmin' %}class="active"{% endif %}><a class="adminbtn" href="{% url 'resetselection' %}">Web Admin</a></li>
+            <li><a class="loginbtn" href="{% url 'logout' %}">Log out</a></li>
+            </div>
+            {% else %}
+            <li><a class="loginbtn" href="{% url 'login' %}">Log in</a></li>
+            </div>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
