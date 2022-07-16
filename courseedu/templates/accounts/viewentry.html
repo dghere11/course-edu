@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<!--Main container-->
+<div class="container">
+<div class="view-container">
+	{% for i,j in data.items %}
+	<label class="label">{{ i }}</label>
+	<div class="db-content">
+	{% if i == 'Image' %}
+	<img class="category-imgview" src="{{ j.url }}">
+	{% else %}
+	<span>{{ j }}</span>
+	{% endif %}
+	</div>
+	{% endfor %}
+	<div class="formbtn">
+		<a href="{% url 'siteadmin' %}">Back</a>
+	</div>
+</div>
+</div>
+{% endblock content %}
