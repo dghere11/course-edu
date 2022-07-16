@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block title %}Web Admin{% endblock %}
+{% block content %}
+<!--Main container-->
+<div class="container">
+	{% if messages %}
+	<ul class="messages">
+		{% for message in messages %}
+		<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+{% if messages %}
+<strong>{{ message }}</strong>
+{% endif %}
+<div class="table-container">
+	<h2 class="heading">Manage Course Categories</h2>
+    <div class="main-options">
+        <form action="{% url 'resetselection' %}">
+            <input type="submit" value="Refresh" />
+        </form>
+        <form action="{% url 'selectallentry' %}">
+            <input type="submit" value="Select All" />
+        </form>
+        <form action="{% url 'resetselection' %}">
+            <input type="submit" value="Deselect All" />
+        </form>
+        <form action="{% url 'deleteselected' %}">
+            <input type="submit" value="Delete Selected" />
+        </form>
+        <form action="{% url 'showentry' %}">
+            <input type="submit" value="Show" />
+        </form>
+        <form action="{% url 'hideentry' %}">
+            <input type="submit" value="Hide" />
+        </form>
+        <form action="{% url 'addcategory' %}">
+            <input type="submit" value="+" />
+        </form>
+    </div>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>S.No.</th>
+            <th>Name</th>
+            <th>Short Name</th>
+            <th>Content id</th>
+            <th>Description</th>
+            <th>Options</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for i in entries %}
+        <tr>
+            <td>{{i.sno}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.short_name}}</td>
+            <td>{{i.content_id}}</td>
+            <td>{{i.description}}</td>
+            <td>
+                <div class="options">
+                {% if i.selection == True %}
+                <form class="checkbox-T" action="{% url 'deselect-entry' i.id %}">
+                    <input type="submit" value="" />
+                </form>
+                {% else %}
+                <form class="checkbox-F" action="{% url 'select-entry' i.id %}">
+                    <input type="submit" value="" />
+                </form>
+                {% endif %}
+                <form action="{% url 'view-entry' i.id %}">
+                    <input type="submit" value="View" />
+                </form>
+                <form action="{% url 'edit-entry' i.id %}">
+                    <input type="submit" value="Edit" />
+                </form>
+                <form action="{% url 'delete-entry' i.id %}">
+                    <input type="submit" value="Delete" />
+                </form>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+        <tbody>
+    </table>
+</div>
+</div>
+</div>
+{% endblock content %}

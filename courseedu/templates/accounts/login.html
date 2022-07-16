@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<!--Main container-->
+<div class="container">
+<div class="login-box">
+  <form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Sign in</button>
+  </form>
+  <!-- <form action="#" method="post">
+    {% csrf_token %}
+    <label for="username">Username</label></br>
+    <input type="text" name="uname" id="uname" placeholder="Enter Username" class="input-box">
+    </br></br>
+    <label for="username">Password</label></br>
+    <input type="password" name="uname" id="uname" placeholder="Enter Password" class="input-box"></br>
+    <div class="forget">
+      <label class="checkbox-label">
+      <input type="checkbox">
+      <span class="checkbox-custom "></span>
+      <span class="label-text">Remember me</span>
+      </label>
+      <span class="fg">
+      <a href="#"> Forget password?</a>
+      </span>
+    </div>
+    <button type="submit" class="btn">Sign In</button>
+  </form> -->
+</div>
+</div>
+</div>
+{% endblock content %}

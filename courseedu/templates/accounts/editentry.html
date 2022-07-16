@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<!--Main container-->
+<div class="container">
+	{% if messages %}
+	<ul class="messages">
+		{% for message in messages %}
+		<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+<form method="POST" class="form-container" enctype="multipart/form-data">
+	{% csrf_token %}
+	{% for i,j in data.items %}
+	<label class="label">{{ i }}<span class="required">*</span></label>
+	{% if i == 'Description' %}
+	<textarea class="input" id="{{ i }}" name="{{ i }}" rows="8" cols="40" placeholder="{{ j.1 }}" required>{{ j.0 }}</textarea>
+	{% elif i == 'Homepage Visibility' %}
+		{% if j.0 == True %}
+		<input class="checkbox" type="checkbox" id="is_visible" name="is_visible" value="True" checked>
+		{% else %}
+		<input class="checkbox" type="checkbox" id="is_visible" name="is_visible" value="True">
+		{% endif %}
+	{% elif i == 'Image' %}
+	<img class="category-imgview" src="{{ j.0.url }}">
+	<input class='img-input' type="file" id="img" name="img" required>
+	{% else %}
+	<input class="input" id="{{ i }}" name="{{ i }}" type="text" placeholder="{{ j.1 }}" value="{{ j.0 }}" required>
+	{% endif %}
+	{% endfor %}
+	<div class="formbtn">
+	<button class="submit-btn" type="submit">Submit</button>
+	<button class="reset-btn" type="reset">Reset</button>
+	<a href="{% url 'siteadmin' %}">Back</a>
+</div>
+</form>
+</div>
+{% endblock content %}
