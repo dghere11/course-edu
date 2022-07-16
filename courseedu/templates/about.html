@@ -10,15 +10,5 @@
 	</div>
 	</div>
 	</section>
-	<section class="section">
-	<h2>Course Categories</h2>
-  {% for i in categories %}
-	<div class="coursebox">
-	<img class="category-img" src="{{ i.img.url }}">
-	<h4>{{i.name}}</h4>
-	<p>{{i.description}}</p>
-	</div>
-  {% endfor %}
-	</section>
 </div>
 {% endblock content %}
